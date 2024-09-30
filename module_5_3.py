@@ -9,32 +9,44 @@ class House:
     def __eq__(self, other):
         if isinstance(other, House):
             return self.floors == other.floors
-        return False
-
-    def __lt__(self, other):
-        if isinstance(other, House):
-            return self.floors < other.floors
-        return False
-
-    def __le__(self, other):
-        if isinstance(other, House):
-            return self.floors <= other.floors
-        return False
-
-    def __gt__(self, other):
-        if isinstance(other, House):
-            return self.floors > other.floors
-        return False
-
-    def __ge__(self, other):
-        if isinstance(other, House):
-            return self.floors >= other.floors
+        elif isinstance(other, int):
+            return self.floors == other
         return False
 
     def __ne__(self, other):
         if isinstance(other, House):
             return self.floors != other.floors
+        elif isinstance(other, int):
+            return self.floors != other
         return True
+
+    def __lt__(self, other):
+        if isinstance(other, House):
+            return self.floors < other.floors
+        elif isinstance(other, int):
+            return self.floors < other
+        return False
+
+    def __le__(self, other):
+        if isinstance(other, House):
+            return self.floors <= other.floors
+        elif isinstance(other, int):
+            return self.floors <= other
+        return False
+
+    def __gt__(self, other):
+        if isinstance(other, House):
+            return self.floors > other.floors
+        elif isinstance(other, int):
+            return self.floors > other
+        return False
+
+    def __ge__(self, other):
+        if isinstance(other, House):
+            return self.floors >= other.floors
+        elif isinstance(other, int):
+            return self.floors >= other
+        return False
 
     def __add__(self, value):
         if isinstance(value, int):
